@@ -8,11 +8,11 @@ import Footer from './components/Footer.vue';
 </script>
 
 <template>
-  <Navbar />
-  <Hero />
-  <Shorten />
-  <CTA />
-  <Footer />
+    <Navbar />
+    <Hero />
+    <Shorten />
+    <CTA />
+    <Footer />
 </template>
 
 <style scoped></style>
