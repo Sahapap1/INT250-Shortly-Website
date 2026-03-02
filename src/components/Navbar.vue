@@ -1,37 +1,50 @@
 <script setup>
+import { ref } from "vue";
 
+const show = ref(false);
+
+const toggle = () => {
+  show.value = !show.value;
+};
 </script>
 
 <template>
-    <!-- Nav Container -->
-    <nav >
-        <!-- Flex Container for all items -->
-        <div >
-            <!-- Flex Container for Logo/Menu -->
-            <div>
-                <!-- Logo -->
-                <img src="../assets/logo.svg" alt="">
-                <!-- Left Menu -->
-                <div>
-                    <a href="">Features</a>
-                    <a href="">Pricing</a>
-                    <a href="">Resources</a>
-                </div>
-
-                <!-- Right Button Menu -->
-                <div>
-                    <a href="">Login</a>
-                    <a href="">Sign up</a>
-                </div>
-
-
-                <!-- @todo Hamburger Button -->
-            </div>
-
-
+  <!-- Nav Container -->
+  <nav>
+    <!-- Flex Container for all items -->
+    <div>
+      <!-- Flex Container for Logo/Menu -->
+      <div
+        class="flex justify-between items-center p-5 md:px-10 lg:px-0 lg:justify-around"
+      >
+        <div class="flex items-center gap-15">
+          <!-- Logo -->
+          <img src="../assets/logo.svg" alt="" />
+          <!-- Left Menu -->
+          <div class="hidden lg:flex gap-5 font-bold">
+            <a href="">Features</a>
+            <a href="">Pricing</a>
+            <a href="">Resources</a>
+          </div>
         </div>
-    </nav>
 
+        <!-- Right Button Menu -->
+        <i
+           @click="toggle"
+          class="fa-solid text-gray-500"
+          :class="show ? 'fa-x lg:hidden!' : 'fa-bars'"
+        ></i>
+        <div class="hidden lg:flex gap-5 font-bold items-center">
+          <a href="">Login</a>
+          <a href="" class="text-white rounded-4xl bg-cyan-400 px-5 py-2"
+            >Sign up</a
+          >
+        </div>
+
+        <!-- @todo Hamburger Button -->
+      </div>
+    </div>
+  </nav>
 </template>
 
 <style scope></style>
